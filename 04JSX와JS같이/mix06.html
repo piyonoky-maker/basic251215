@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    //text가 대문자로 시작하면 h1을
+    //소문자로 시작하면 h3으로 한다
+    //charAt(), toUpperCase(), toLowerCase()
+    const root = document.querySelector("#root");
+    //파라미터 자리에 {}가 있다면 props이다
+    const Number2 = ({number, selected}) => {   
+      //return (number%2 === 0? <h1>{number}</h1> :<h3>{number}</h3>);
+      return (selected ? <h1>{number}</h1> :<h3>{number}</h3>);
+    };
+    const element = (
+      <>
+        {/*for문 보다는 map을 더 많이 사용함*/}
+        {/*자바스크립트의 복잡한 연산을 elelment을 사용하는 곳에서도 사용 가능함*/}
+        
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num, index) =>{
+          return <Number2 key={index} number={num} selected={num===3}/>
+        })}
+      </>
+    );
+    ReactDOM.createRoot(root).render(element);
+  </script>
+</body>
+</html>
+<!--
+1부터 5까지의 숫자를  출력하는데 홀수는 작게 짝수는 크게 출력 해보자
+-->

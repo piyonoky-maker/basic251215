@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello react</title>
+    <!-- react,development.js -->
+
+    <!-- cdn - 로컬 캐쉬 사용 - 속도 느림 -->
+    <!-- unpkg - 내트워크 사용 -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <style>
+        .title {
+            color: red;
+            font-size: 40px;
+        }
+    </style>
+    <script type="text/babel">  
+        const root = document.querySelector("#root")
+        const msg = "Hello React!!!"
+        const 클래스이름 = "title"
+        const element = <h2 className={클래스이름}>{msg}</h2> //JSX문법 -> html과 js섞어쓰기
+        ReactDOM.createRoot(root).render(element)
+    </script>
+</body>
+</html>

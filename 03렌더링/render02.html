@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello react</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript">  
+    /*
+    div와 button 모두 갱신됨 - DOM Tag refresh 확인
+    */
+        const root = document.querySelector("#root");
+        function tick() {
+            const number = Math.floor(Math.random()*10-1)+1;
+            const element = `
+                <button>${number}</button>            
+            `;
+            root.innerHTML = element;
+        }
+
+        setInterval(tick, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map함수</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">  
+        const root = document.querySelector("#root")
+        //여기는 JS주석
+        //<>태그이면 그것이 Fragment임
+        const element = (
+            <React.Fragment>
+                {/* JSX문법의 주석 */}
+                {/* element내부에  여러 엘리먼트를 사용할 때는 반드시 전체를 감싸는 태그가 필요함 */}
+                {/* div태그로 묶어도 가능 > 블필요한 태그가 추가되는 것은 추천되지 않음 */}
+                <h2>목록 보기</h2>
+                {
+                    ['🍉','🍓','🍅'].map((currentValue, x, array) => (
+                        <h1 key={x}>{currentValue}</h1>
+                    ))
+                }
+            </React.Fragment>
+        ) //JSX문법 -> html과 js섞어쓰기
+        ReactDOM.createRoot(root).render(element)
+    </script>
+</body>
+</html>
+<!-- 
+React에서 배열 데이터를 JSX로 렌더링 할 때 key속성이 필요한 이유에 대해 말할 수 있다.
+key속성을 생략하면 에러가 발생함.
+key의 역할을 가상 DOM관점에서 이야기 하면....
+React가 key값을 활용해서 어떤 요소가 변경되었는지 비교하는 알고리즘을 제공한다.
+
+key를 통해서 이전과 이후에 변경된 사항이 있는지 판단함
+만일 누락하면 렌더링 오류는 없지만 성능 저하 및 UI버그 발생할 수 도 있다.
+-->
