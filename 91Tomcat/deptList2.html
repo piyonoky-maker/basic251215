@@ -18,7 +18,7 @@
     const App = () => {
       const [isOk, setIsOk] = React.useState(false);
       //변수 처럼 취급 - 다른점 : state(상태)가 변하면 화면을 다시 그림
-      //데이터 종류: String, number, [], {}, 3.1, false
+      //데이터 종류: String, number, [], {}, 3.14, false
       const [depts, setDepts] = React.useState([]);
       /*const [depts, setDepts] = React.useState([
         {"deptno": 10, "dname": "총무부", "loc": "서울"},
@@ -72,11 +72,6 @@ fetch("http://localhost:8000/dept")
             ))}
             </tbody>
           </table>
-          {/*
-            {depts.map((dept) => (
-              
-            ))}
-          */}
         </>
       )
     }
