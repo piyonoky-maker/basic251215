@@ -11,17 +11,18 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    //함수선언도 가능하고 후출도 가능함
+    //1. 함수선언도 가능하고 후출도 가능함
     const formatName = (user) => {
       return user.firstName +" "+user.lastName
     }
-    //객체 리터럴 사용이 가능함
+    //2. 객체 리터럴 사용이 가능함
     const user = {
       firstName: 'scott',
       lastName: 'tiger'
     }
     const element = <h2>Hello, {formatName(user)}</h2>//JSX문법 {} 붙이면 어디든 JS를 섞어쓰기 가능함
     const root = ReactDOM.createRoot(document.querySelector("#root"))
+    
     root.render(element);
   </script>
 </body>
